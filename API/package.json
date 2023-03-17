@@ -1,0 +1,47 @@
+{
+  "name": "my-express-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "@aws-sdk/client-ses": "^3.8.0",
+    "aws-sdk": "^2.858.0",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "node-iex-cloud": "^2.1.1",
+    "node-ses": "^3.0.3",
+    "nodemailer": "^6.5.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "save": "^2.4.0",
+    "sequelize": "^6.5.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-http": "^2.7.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.9.0"
+  }
+}
