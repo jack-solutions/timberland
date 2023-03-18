@@ -57,6 +57,17 @@ const updateOrder = async(req,res,next) => {
     }
 }
 
+const findOne = async (req,res,next) =>{
+    try {
+        const getOrder = await Order.findAll({where : {unique_id : req.params.id}});
+        const obj = resPattern.successPattern(httpStatus.OK,getOrder,'success');
+        return res.status(obj.code).json({
+            ...obj
+        });   
+    } catch (e) {
+        return next(new APIError(`${e.message}`,httpStatus.BAD_REQUEST,true));
+    }
+}
 
 const imageUpload = async (req,res,next) => {
     try {
@@ -81,5 +92,6 @@ module.exports = {
     createOrder,
     getOrders,
     updateOrder,
-    imageUpload
+    imageUpload,
+    findOne
 }
