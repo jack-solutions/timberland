@@ -90,6 +90,11 @@ const Order = sequelize.define('order',{
         type : DataTypes.STRING,
         allowNull : true
     }, 
+    cleaner_can_collect : {
+        type : DataTypes.BOOLEAN,
+        defaultValue : true,
+        allowNull : true
+    },
     modified_date : {
         type: DataTypes.DATE,
         defaultValue: moment.utc().format('YYYY-MM-DD HH:mm:ss'),
