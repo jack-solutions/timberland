@@ -47,7 +47,7 @@ const updateOrder = async(req,res,next) => {
     try {
         const id = req.params.id;
         const requestData = req.body;
-        const result = await Order.update(requestData,{where : { unique_id : id}});
+        const result = await Order.update(requestData,{where : { _id : id}});
         const obj = resPattern.successPattern(httpStatus.OK,result,'success');
         return res.status(obj.code).json({
             ...obj
@@ -59,7 +59,7 @@ const updateOrder = async(req,res,next) => {
 
 const findOne = async (req,res,next) =>{
     try {
-        const getOrder = await Order.findAll({where : {unique_id : req.params.id}});
+        const getOrder = await Order.findAll({where : {_id : req.params.id}});
         const obj = resPattern.successPattern(httpStatus.OK,getOrder,'success');
         return res.status(obj.code).json({
             ...obj

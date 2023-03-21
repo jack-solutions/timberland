@@ -4,7 +4,7 @@ const moment = require('moment');
 
 
 const Order = sequelize.define('order',{
-    unique_id : {
+    _id : {
         type : DataTypes.BIGINT,
         allowNull : false,
         primaryKey : true,
@@ -80,12 +80,10 @@ const Order = sequelize.define('order',{
         type : DataTypes.STRING,
         allowNull : true
     },
-    // unique_id : {
-    //     type : DataTypes.BIGINT,
-    //     allowNull : false,
-    //     // primaryKey : true,
-    //     autoIncrement : true
-    // },
+    unique_id : {
+        type : DataTypes.STRING,
+        allowNull : true
+    },
     creator : {
         type : DataTypes.STRING,
         allowNull : true
