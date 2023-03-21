@@ -15,7 +15,7 @@ const Order = sequelize.define('order',{
         defaultValue : true,
         allowNull : true
     }, 
-    consumer_collected_show : {
+    consumer_collected_shoe : {
         type : DataTypes.BOOLEAN,
         defaultValue : true,
         allowNull : true
