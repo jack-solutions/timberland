@@ -8,6 +8,7 @@ router.route('/create-order').post(uploadS3.fields([
 router.route('/get-orders').get(orderCtrl.getOrders);
 router.route('/get-order/:id').get(orderCtrl.findOne);
 router.route('/update-order/:id').put(orderCtrl.updateOrder);
+router.route('/delete-order/:id').delete(orderCtrl.deletUser);
 router.route('/image-upload').post(uploadS3.single('image'),orderCtrl.imageUpload);
 
 

@@ -69,6 +69,17 @@ const findOne = async (req,res,next) =>{
     }
 }
 
+const deletUser = async (req,res,next) =>{
+    try {
+        const deleteItem = await Order.destroy({ where : {_id : req.params.id}});
+        const obj = resPattern.successPattern(httpStatus.OK,deleteItem,'success');
+        return res.status(obj.code).json({
+            ...obj
+        });
+    } catch (e) {
+        return next(new APIError(`${e.message}`,httpStatus.BAD_REQUEST,true));
+    }
+}
 const imageUpload = async (req,res,next) => {
     try {
         const file = req.file;
@@ -93,5 +104,6 @@ module.exports = {
     getOrders,
     updateOrder,
     imageUpload,
-    findOne
+    findOne,
+    deletUser
 }
